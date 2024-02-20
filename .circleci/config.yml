@@ -52,6 +52,6 @@ workflows:
   monWorkflow:
     jobs:
       - checkout_and_unit_test
-
-
-
+      - deploy_backend:
+        requires: 
+          - checkout_and_unit_test
