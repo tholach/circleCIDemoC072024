@@ -52,37 +52,27 @@ workflows:
   monWorkflow:
     jobs:
       - checkout_and_unit_test
-
       - deploy_backend
           requires: 
             - checkout_and_unit_test
-
       -integration_tests_backend
           requires: 
             - deploy_backend
-
       - deploy_staging
           requires: 
             - integration_tests_backend
-
       - acceptance_test_1
           requires: 
             - deploy_staging
-      
-
       - acceptance_test_2
           requires: 
             - deploy_staging
-
       - acceptance_test_3
           requires: 
             - deploy_staging
-
       - acceptance_test_4
           requires: 
             - deploy_staging
-
-
       - deploy_production
           requires: 
             - acceptance_test_1
