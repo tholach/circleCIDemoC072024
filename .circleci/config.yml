@@ -1,13 +1,21 @@
 version: 2.1
 
 jobs:
-  sayhello:
+  chd_:
     description: A job that says Hello
     machine: true
     steps:
       - run: echo "Hello Worldd!"
 
+jobs:
+  checkoutyo:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
 workflows:
   monWorkflow:
     jobs:
-      - sayhello
+      -chd_
+      -checkoutyo
