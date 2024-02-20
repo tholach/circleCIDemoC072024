@@ -1,21 +1,124 @@
 version: 2.1
 
 jobs:
-  chd_:
+  checkout_and_unit_test:
     description: A job that says Hello
     machine: true
     steps:
       - run: echo "Hello Worldd!"
 
 jobs:
-  checkoutyo:
+  deploy_backend:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
 
+jobs:
+  integration_tests_backend:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+
+
+jobs:
+  deploy_staging:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+
+jobs:
+  acceptance_test_1:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+
+jobs:
+  acceptance_test_1:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+
+jobs:
+  acceptance_test_2:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+
+jobs:
+  acceptance_test_3:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+jobs:
+  acceptance_test_4:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+
+jobs:
+  deploy_production:
+    description: A job that sfffays Hello
+    machine: true
+    steps:
+      - run: echo "Helslo Worldd!"
+
+    
+
 workflows:
   monWorkflow:
     jobs:
-      -chd_
-      -checkoutyo
+      - checkout_and_unit_test
+
+      - deploy_backend
+        requires: 
+          - checkout_and_unit_test
+
+      -integration_tests_backend
+        requires: 
+          - deploy_backend
+
+      - deploy_staging
+        requires: 
+          - integration_tests_backend
+
+      - acceptance_test_1
+        requires: 
+          - deploy_staging
+      
+
+      - acceptance_test_2
+        requires: 
+          - deploy_staging
+
+      - acceptance_test_3
+        requires: 
+          - deploy_staging
+
+      - acceptance_test_4
+        requires: 
+          - deploy_staging
+
+
+      - deploy_production
+        requires: 
+          - acceptance_test_1
+          - acceptance_test_2
+          - acceptance_test_3
+          - acceptance_test_4
+
+
