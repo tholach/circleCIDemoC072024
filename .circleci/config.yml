@@ -6,78 +6,47 @@ jobs:
     machine: true
     steps:
       - run: echo "Hello Worldd!"
-
-jobs:
   deploy_backend:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-jobs:
   integration_tests_backend:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-
-
-jobs:
   deploy_staging:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-
-jobs:
   acceptance_test_1:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-
-jobs:
-  acceptance_test_1:
-    description: A job that sfffays Hello
-    machine: true
-    steps:
-      - run: echo "Helslo Worldd!"
-
-
-jobs:
   acceptance_test_2:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-
-jobs:
   acceptance_test_3:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-jobs:
   acceptance_test_4:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
-
-
-jobs:
   deploy_production:
     description: A job that sfffays Hello
     machine: true
     steps:
       - run: echo "Helslo Worldd!"
 
-    
 
 workflows:
   monWorkflow:
